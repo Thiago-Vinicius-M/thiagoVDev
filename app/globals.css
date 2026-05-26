@@ -54,8 +54,35 @@ body {
   will-change: transform;
 }
 
+@media (max-width: 767px) {
+  .animate-marquee {
+    animation-duration: 10s;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee {
     animation-play-state: paused;
+  }
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-modal {
+  animation: modal-in 0.18s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-modal {
+    animation: none;
   }
 }

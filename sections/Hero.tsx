@@ -2,9 +2,10 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 
 // Ajuste aqui para controlar o enquadramento da foto sem editar o componente.
-// x: posição horizontal (ex: "50%", "left", "40%")
-// y: posição vertical   (ex: "20%", "top", "center")
-const PROFILE_CROP = { x: "50%", y: "20%" };
+// x:    posição horizontal (ex: "50%", "left", "40%")
+// y:    posição vertical   (ex: "20%", "top", "center")
+// zoom: ampliação da imagem (1 = normal, 1.2 = 20% maior, 2 = dobro)
+const PROFILE_CROP = { x: "64%", y: "59%", zoom: 1.2};
 
 export function Hero() {
   return (
@@ -50,11 +51,15 @@ export function Hero() {
         <div className="flex justify-center md:justify-end pt-1">
           <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border border-[var(--border)]">
             <Image
-              src="/images/profile.png"
+              src="/images/profile.webp"
               alt="Thiago Vinícius"
               fill
               className="object-cover"
-              style={{ objectPosition: `${PROFILE_CROP.x} ${PROFILE_CROP.y}` }}
+              style={{
+                objectPosition: `${PROFILE_CROP.x} ${PROFILE_CROP.y}`,
+                transform: `scale(${PROFILE_CROP.zoom})`,
+                transformOrigin: `${PROFILE_CROP.x} ${PROFILE_CROP.y}`,
+              }}
               sizes="(max-width: 768px) 144px, 176px"
               priority
             />

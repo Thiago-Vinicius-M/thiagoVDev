@@ -22,7 +22,18 @@
       "PowerShell(Remove-Item \"e:\\\\Projetos\\\\Port2026\\\\sections\\\\Experience.tsx\" -Confirm:$false)",
       "Bash(python3 -c ' *)",
       "Bash(npm install *)",
-      "PowerShell(Rename-Item -Path \"e:\\\\Projetos\\\\Port2026\" -NewName \"thiagoVDev\" -ErrorAction Stop)"
+      "PowerShell(Rename-Item -Path \"e:\\\\Projetos\\\\Port2026\" -NewName \"thiagoVDev\" -ErrorAction Stop)",
+      "Bash(Get-ChildItem \"e:\\\\Projetos\\\\thiagoVDev\" -Filter \"*.env*\" -Force)",
+      "Bash(Get-ChildItem \"e:\\\\Projetos\\\\thiagoVDev\" -Filter \".env*\" -Force)",
+      "PowerShell(Get-ChildItem \"e:\\\\Projetos\\\\thiagoVDev\" -Force -Recurse -Depth 1 | Where-Object { $_.Name -match \"\\\\.env\" } | Select-Object FullName, Attributes)",
+      "PowerShell([System.Environment]::GetEnvironmentVariable\\(\"NEXT_PUBLIC_SUPABASE_URL\"\\); [System.Environment]::GetEnvironmentVariable\\(\"NEXT_PUBLIC_SUPABASE_ANON_KEY\"\\))",
+      "PowerShell(\\(Get-ChildItem \"e:\\\\Projetos\\\\thiagoVDev\\\\.next\" -Force | Measure-Object\\).Count)",
+      "PowerShell(cmd /c \"dir /a /b e:\\\\Projetos\\\\thiagoVDev\" 2>&1)",
+      "Bash(Get-ChildItem -Path \"e:\\\\Projetos\\\\thiagoVDev\" -Recurse -Force)",
+      "Bash(Select-Object -Property FullName)",
+      "Bash(Sort-Object FullName)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(Test-Path \"e:\\\\Projetos\\\\thiagoVDev\\\\public\\\\images\\\\thumbNewOrcaPort.webp\")"
     ]
   }
 }

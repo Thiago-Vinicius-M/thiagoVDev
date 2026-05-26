@@ -1,15 +1,7 @@
 export type ProjectType =
   | "Caso de estudo"
   | "Projeto Acadêmico"
-  | "Projeto Pessoal"
-  | "Outro";
-
-export type ProjectStatus =
-  | "Em desenvolvimento"
-  | "Fase de testes"
-  | "Em produção"
-  | "Arquivado"
-  | "Outro";
+  | "Projeto Comercial";
 
 // Preparado para a futura seção "Destrinchamento técnico"
 export interface TechnicalBreakdown {
@@ -28,12 +20,16 @@ export interface Project {
   slug: string;
   name: string;
   description: string;
+  objective?: string;
+  problem?: string;
+  need?: string;
   technologies: string[];
   documentation?: string;
+  flowcharts?: string[];
+  erd?: string;
   type: ProjectType;
-  status: ProjectStatus;
   desktopMockup: string;
-  mobileMockup: string;
+  mobileMockup?: string;
   githubUrl?: string;
   deployUrl?: string;
   featured: boolean;

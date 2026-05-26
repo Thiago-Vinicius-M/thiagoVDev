@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\"",
+    "fresh": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\" && next dev"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",

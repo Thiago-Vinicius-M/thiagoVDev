@@ -28,7 +28,7 @@ export function InfiniteTechStack() {
         {TRACK.map((tech, index) => (
           <div
             key={`${tech.name}-${index}`}
-            className="flex shrink-0 items-center justify-center px-10"
+            className="flex shrink-0 items-center justify-center px-5 md:px-10"
           >
             <div
               className="relative h-16 md:h-[68px] opacity-[0.45]"

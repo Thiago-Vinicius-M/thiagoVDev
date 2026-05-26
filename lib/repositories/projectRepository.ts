@@ -45,7 +45,6 @@ function mapRow(row: Record<string, unknown>): Project {
     technologies: row.technologies as string[],
     documentation: row.documentation as string | undefined,
     type: row.type as Project["type"],
-    status: row.status as Project["status"],
     desktopMockup: row.desktop_mockup as string,
     mobileMockup: row.mobile_mockup as string,
     githubUrl: row.github_url as string | undefined,
