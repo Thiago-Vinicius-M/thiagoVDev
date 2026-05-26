@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"e:\\\\Projetos\\\\Port2026\" -Force | Select-Object Name, @{Name=\"Type\";Expression={if\\($_.PSIsContainer\\){\"DIR\"}else{\"FILE\"}}} | Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem -Path \"e:\\\\Projetos\\\\Port2026\" -Recurse -Force | Select-Object FullName | ForEach-Object { $_.FullName.Replace\\(\"e:\\\\Projetos\\\\Port2026\\\\\", \"\"\\) })",
+      "PowerShell(Test-Path \"e:\\\\Projetos\\\\Port2026\" -PathType Container; \\(Get-Item \"e:\\\\Projetos\\\\Port2026\"\\).GetFiles\\(\\).Count; \\(Get-Item \"e:\\\\Projetos\\\\Port2026\"\\).GetDirectories\\(\\).Count)",
+      "PowerShell(Get-ChildItem -Path \"e:\\\\Projetos\\\\Port2026\" -Hidden -Force -Recurse | Select-Object FullName | ForEach-Object { $_.FullName.Replace\\(\"e:\\\\Projetos\\\\Port2026\\\\\", \"\"\\) } | Sort-Object)",
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "Bash(npm show *)",
+      "Read(//e/Projetos/**)",
+      "Bash(npx create-next-app@15.3.9 Port2026 --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-turbopack --yes)",
+      "Bash(npx create-next-app@15.3.9 . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-turbopack --yes)",
+      "Bash(npx create-next-app@15.3.9 portfolio-tmp --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-turbopack --yes)",
+      "Bash(Copy-Item -Path \"portfolio-tmp\\\\*\" -Destination \"Port2026\\\\\" -Recurse -Force -Exclude \".git\" && echo \"Copy done\")",
+      "Bash(dir /b \"e:\\\\Projetos\\\\Port2026\")",
+      "Bash(Get-ChildItem -Path \"e:\\\\Projetos\\\\Port2026\" -Recurse -Exclude node_modules -Directory)",
+      "Bash(Select-Object FullName)",
+      "Bash(ConvertTo-Json)",
+      "Bash(npx tsc *)",
+      "Bash(Remove-Item \"e:\\\\Projetos\\\\Port2026\\\\sections\\\\Experience.tsx\")",
+      "PowerShell(Remove-Item \"e:\\\\Projetos\\\\Port2026\\\\sections\\\\Experience.tsx\" -Confirm:$false)",
+      "Bash(python3 -c ' *)",
+      "Bash(npm install *)",
+      "PowerShell(Rename-Item -Path \"e:\\\\Projetos\\\\Port2026\" -NewName \"thiagoVDev\" -ErrorAction Stop)"
+    ]
+  }
+}
