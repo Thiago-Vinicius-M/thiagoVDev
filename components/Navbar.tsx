@@ -31,7 +31,9 @@ export function Navbar() {
         ([entry]) => {
           if (entry.isIntersecting) setActiveSection(id);
         },
-        { threshold: 0.3 }
+        // rootMargin compensa a navbar fixa (h-14 = 56px) e cria
+        // uma faixa de detecção no terço superior do viewport
+        { rootMargin: "-56px 0px -60% 0px", threshold: 0 }
       );
       observer.observe(el);
       observers.push(observer);

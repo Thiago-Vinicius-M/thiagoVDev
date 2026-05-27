@@ -1,6 +1,6 @@
 import { FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { EmailCard } from "@/components/ui/EmailCard";
 import { FOOTER_LINKS } from "@/lib/data";
 
 const CONTACT_ITEMS = [
@@ -22,7 +22,7 @@ const CONTACT_ITEMS = [
     label: "Email",
     description: FOOTER_LINKS.email,
     href: `mailto:${FOOTER_LINKS.email}`,
-    icon: MdEmail,
+    icon: null,
     external: false,
   },
   {
@@ -47,23 +47,29 @@ export function FooterSection() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {CONTACT_ITEMS.map(({ label, description, href, icon: Icon, external }) => (
-            <a
-              key={label}
-              href={href}
-              {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
-              className="flex items-center gap-4 p-4 rounded-lg border border-[var(--border)] bg-[var(--card)] hover:border-[rgba(255,255,255,0.1)] hover:bg-[#161616] transition-colors duration-200 group"
-            >
-              <Icon
-                className="text-[var(--text-muted)] group-hover:text-white transition-colors duration-200 shrink-0"
-                size={18}
-              />
-              <div>
-                <p className="text-sm font-medium text-white">{label}</p>
-                <p className="text-xs text-[var(--text-muted)] mt-0.5">{description}</p>
-              </div>
-            </a>
-          ))}
+          {CONTACT_ITEMS.map(({ label, description, href, icon: Icon, external }) =>
+            label === "Email" ? (
+              <EmailCard key={label} email={FOOTER_LINKS.email} />
+            ) : (
+              <a
+                key={label}
+                href={href}
+                {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+                className="flex items-center gap-4 p-4 rounded-lg border border-[var(--border)] bg-[var(--card)] hover:border-[rgba(255,255,255,0.1)] hover:bg-[#161616] transition-colors duration-200 group"
+              >
+                {Icon && (
+                  <Icon
+                    className="text-[var(--text-muted)] group-hover:text-white transition-colors duration-200 shrink-0"
+                    size={18}
+                  />
+                )}
+                <div>
+                  <p className="text-sm font-medium text-white">{label}</p>
+                  <p className="text-xs text-[var(--text-muted)] mt-0.5">{description}</p>
+                </div>
+              </a>
+            )
+          )}
         </div>
       </section>
 

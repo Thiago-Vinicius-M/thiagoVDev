@@ -3,16 +3,25 @@ export type ProjectType =
   | "Projeto Acadêmico"
   | "Projeto Comercial";
 
-// Preparado para a futura seção "Destrinchamento técnico"
-export interface TechnicalBreakdown {
-  learnings?: string;
-  architecture?: string;
-  logic?: string;
-  decisions?: string;
-  ux?: string;
-  mistakes?: string;
-  improvements?: string;
-  reasoning?: string;
+export type ProjectStatus =
+  | "Concluído"
+  | "Em desenvolvimento"
+  | "Pausado"
+  | "Arquivado";
+
+export interface AutomatedTest {
+  title: string;
+  description: string;
+}
+
+export interface ArchitectureStackItem {
+  category: string;
+  value: string;
+}
+
+export interface SystemFolder {
+  folder: string;
+  description: string;
 }
 
 export interface Project {
@@ -20,20 +29,33 @@ export interface Project {
   slug: string;
   name: string;
   description: string;
-  objective?: string;
-  problem?: string;
-  need?: string;
+  fullDescription?: string;
+  problemSolved?: string;
+  mainFeatures?: string[];
+  technicalDifferentials?: string[];
+  status?: ProjectStatus;
   technologies: string[];
-  documentation?: string;
+  architectureStack?: ArchitectureStackItem[];
+  systemStructure?: SystemFolder[];
+  architectureNotes?: string[];
+  architectureFinancial?: string;
+  architectureSecurity?: string;
+  automatedTests?: AutomatedTest[];
+  testsCoverage?: string;
+  testsScenarios?: string[];
+  testsStrategy?: string;
+  testsTools?: string[];
+  testsCodeExample?: string;
+  testsCodeContext?: string;
   flowcharts?: string[];
-  erd?: string;
+  entityRelationshipDiagrams?: string[];
   type: ProjectType;
+  coverImage?: string;
   desktopMockup: string;
-  mobileMockup?: string;
   githubUrl?: string;
-  deployUrl?: string;
+  vercelUrl?: string;
+  documentationUrl?: string;
   featured: boolean;
-  technicalBreakdown?: TechnicalBreakdown;
   createdAt: string;
   updatedAt: string;
 }

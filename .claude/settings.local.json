@@ -33,7 +33,20 @@
       "Bash(Select-Object -Property FullName)",
       "Bash(Sort-Object FullName)",
       "Bash(Format-Table -AutoSize)",
-      "Bash(Test-Path \"e:\\\\Projetos\\\\thiagoVDev\\\\public\\\\images\\\\thumbNewOrcaPort.webp\")"
+      "Bash(Test-Path \"e:\\\\Projetos\\\\thiagoVDev\\\\public\\\\images\\\\thumbNewOrcaPort.webp\")",
+      "Bash(node -e \"const x = require\\('react-icons/io5'\\); console.log\\('IoCopyOutline' in x, 'IoCheckmarkOutline' in x\\)\")",
+      "Bash(npx next *)",
+      "Bash(New-Item -ItemType Directory -Force \"e:\\\\Projetos\\\\thiagoVDev\\\\public\\\\docs\\\\orca\")",
+      "Bash(Out-Null)",
+      "Bash(Copy-Item \"e:\\\\Projetos\\\\thiagoVDev\\\\docs\\\\orca\\\\er-diagram.svg\" \"e:\\\\Projetos\\\\thiagoVDev\\\\public\\\\docs\\\\orca\\\\er-diagram.svg\")",
+      "Bash(Copy-Item \"e:\\\\Projetos\\\\thiagoVDev\\\\docs\\\\orca\\\\flowchart.svg\" \"e:\\\\Projetos\\\\thiagoVDev\\\\public\\\\docs\\\\orca\\\\flowchart.svg\")",
+      "Bash(Write-Output \"OK\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"e:\\\\Projetos\\\\thiagoVDev\\\\public\\\\docs\\\\orca\")",
+      "PowerShell(Copy-Item \"e:\\\\Projetos\\\\thiagoVDev\\\\docs\\\\orca\\\\er-diagram.svg\" \"e:\\\\Projetos\\\\thiagoVDev\\\\public\\\\docs\\\\orca\\\\er-diagram.svg\")",
+      "PowerShell(Copy-Item \"e:\\\\Projetos\\\\thiagoVDev\\\\docs\\\\orca\\\\flowchart.svg\" \"e:\\\\Projetos\\\\thiagoVDev\\\\public\\\\docs\\\\orca\\\\flowchart.svg\")",
+      "Bash(Get-ChildItem -Path \"E:\\\\Projetos\\\\Orcamento\" -Force)",
+      "Bash(Select-Object Name, FullName)",
+      "Bash(xargs wc -l)"
     ]
   }
 }
