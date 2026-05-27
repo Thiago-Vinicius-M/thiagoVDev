@@ -22,11 +22,15 @@
 
 html {
   scroll-behavior: smooth;
+  /* offset para a navbar fixa de 56px (h-14) */
+  scroll-padding-top: 3.5rem;
 }
 
 body {
   background-color: var(--bg);
   color: #ffffff;
+  /* previne scroll horizontal acidental */
+  overflow-x: clip;
 }
 
 ::-webkit-scrollbar {
@@ -56,7 +60,7 @@ body {
 
 @media (max-width: 767px) {
   .animate-marquee {
-    animation-duration: 10s;
+    animation-duration: 22s;
   }
 }
 

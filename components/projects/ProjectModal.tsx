@@ -297,7 +297,7 @@ function DiagramCard({ src, alt }: { src: string; alt: string }) {
         <button
           onClick={() => setLightbox(true)}
           aria-label="Ver em tela cheia"
-          className="absolute top-2 right-2 w-7 h-7 rounded-md bg-black/60 border border-white/10 flex items-center justify-center text-white/50 opacity-0 group-hover:opacity-100 hover:text-white hover:border-white/25 transition-all duration-200"
+          className="absolute top-2 right-2 w-8 h-8 sm:w-7 sm:h-7 rounded-md bg-black/60 border border-white/10 flex items-center justify-center text-white/50 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 hover:text-white hover:border-white/25 transition-all duration-200"
         >
           <FiMaximize2 size={12} />
         </button>
@@ -384,7 +384,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
       <div className="animate-modal relative z-10 w-full sm:max-w-[760px] bg-[var(--card)] border border-[var(--border)] rounded-t-2xl sm:rounded-2xl max-h-[92vh] flex flex-col overflow-hidden">
 
         {/* Cover */}
-        <div className="shrink-0 relative h-28 bg-[#0d0d0d] overflow-hidden">
+        <div className="shrink-0 relative h-20 sm:h-28 bg-[#0d0d0d] overflow-hidden">
           {project.coverImage ? (
             <Image
               src={project.coverImage}
@@ -405,9 +405,9 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             ref={closeBtnRef}
             onClick={onClose}
             aria-label="Fechar"
-            className="absolute top-3 right-3 w-7 h-7 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-white/20 transition-colors duration-200"
+            className="absolute top-3 right-3 w-9 h-9 sm:w-7 sm:h-7 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-white/20 transition-colors duration-200"
           >
-            <FiX size={13} />
+            <FiX size={14} />
           </button>
         </div>
 
@@ -457,7 +457,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 role="tab"
                 aria-selected={activeTab === tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`shrink-0 relative text-xs py-2.5 px-3.5 whitespace-nowrap transition-colors duration-150 ${
+                className={`shrink-0 relative text-xs py-3.5 sm:py-2.5 px-3.5 whitespace-nowrap transition-colors duration-150 ${
                   activeTab === tab.id
                     ? "text-white"
                     : "text-[var(--text-muted)] hover:text-white/60"
@@ -495,20 +495,20 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           </nav>
 
           {/* Tab content */}
-          <div className="flex-1 overflow-y-auto p-5">
+          <div className="flex-1 overflow-y-auto p-4 sm:p-5">
             <TabContent activeTab={activeTab} project={project} />
           </div>
         </div>
 
         {/* Footer */}
         {hasLinks && (
-          <div className="shrink-0 px-5 py-3.5 border-t border-[var(--border)] flex flex-wrap gap-2">
+          <div className="shrink-0 px-4 sm:px-5 py-3 sm:py-3.5 border-t border-[var(--border)] flex flex-wrap gap-2">
             {project.vercelUrl && (
               <a
                 href={project.vercelUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 text-xs px-3.5 py-2 rounded-lg border border-[var(--border)] text-white/80 hover:border-white/20 hover:text-white transition-colors duration-200"
+                className="flex items-center gap-1.5 text-xs px-3.5 py-2.5 sm:py-2 rounded-lg border border-[var(--border)] text-white/80 hover:border-white/20 hover:text-white transition-colors duration-200"
               >
                 <FiExternalLink size={12} />
                 Deploy
@@ -519,7 +519,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 text-xs px-3.5 py-2 rounded-lg border border-[var(--border)] text-[var(--text-muted)] hover:border-white/20 hover:text-white transition-colors duration-200"
+                className="flex items-center gap-1.5 text-xs px-3.5 py-2.5 sm:py-2 rounded-lg border border-[var(--border)] text-[var(--text-muted)] hover:border-white/20 hover:text-white transition-colors duration-200"
               >
                 <FiGithub size={12} />
                 Ver GitHub
@@ -530,7 +530,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 href={project.documentationUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 text-xs px-3.5 py-2 rounded-lg border border-[var(--border)] text-[var(--text-muted)] hover:border-white/20 hover:text-white transition-colors duration-200"
+                className="flex items-center gap-1.5 text-xs px-3.5 py-2.5 sm:py-2 rounded-lg border border-[var(--border)] text-[var(--text-muted)] hover:border-white/20 hover:text-white transition-colors duration-200"
               >
                 <FiFileText size={12} />
                 Documentação

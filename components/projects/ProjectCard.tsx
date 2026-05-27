@@ -42,7 +42,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
       </div>
 
       {/* Content */}
-      <div className="px-5 pb-6">
+      <div className="px-5 pt-4 pb-6">
         {/* Type badge */}
         <div className="flex items-center gap-1.5 mb-2.5">
           <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${typeBadge.dot}`} aria-hidden="true" />

@@ -29,7 +29,7 @@ export function Projects({ projects }: ProjectsProps) {
     <>
       <section
         id="projetos"
-        className="scroll-mt-0 max-w-4xl mx-auto px-4 md:px-6 py-16 md:py-24"
+        className="scroll-mt-14 max-w-4xl mx-auto px-4 md:px-6 py-16 md:py-24"
       >
         <div className="mb-3.5">
           <SectionHeading title="Projetos" className="mb-3" />

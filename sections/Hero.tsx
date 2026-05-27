@@ -13,12 +13,12 @@ export function Hero() {
       id="hero"
       className="max-w-4xl mx-auto px-4 md:px-6 pt-28 pb-16 md:pt-32 md:pb-20"
     >
-      <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-start">
+      <div className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-start">
         {/* Text */}
         <div>
           <Badge label="Disponível para trabalhos" pulsing className="mb-6" />
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-[var(--font-space)] leading-tight tracking-tight mb-4">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-[var(--font-space)] leading-tight tracking-tight mb-4">
             Thiago Vinícius.
           </h1>
 

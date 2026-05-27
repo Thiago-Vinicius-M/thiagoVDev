@@ -58,7 +58,7 @@ export function ProjectsCarousel({ projects, onProjectClick }: ProjectsCarouselP
           {projects.map((project) => (
             <div
               key={project.id}
-              className="flex-[0_0_300px] sm:flex-[0_0_320px] md:flex-[0_0_340px]"
+              className="flex-[0_0_88%] sm:flex-[0_0_300px] md:flex-[0_0_340px]"
             >
               <ProjectCard project={project} onClick={() => onProjectClick(project)} />
             </div>

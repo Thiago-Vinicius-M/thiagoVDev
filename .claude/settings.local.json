@@ -46,7 +46,8 @@
       "PowerShell(Copy-Item \"e:\\\\Projetos\\\\thiagoVDev\\\\docs\\\\orca\\\\flowchart.svg\" \"e:\\\\Projetos\\\\thiagoVDev\\\\public\\\\docs\\\\orca\\\\flowchart.svg\")",
       "Bash(Get-ChildItem -Path \"E:\\\\Projetos\\\\Orcamento\" -Force)",
       "Bash(Select-Object Name, FullName)",
-      "Bash(xargs wc -l)"
+      "Bash(xargs wc -l)",
+      "Bash(Get-ChildItem -Path \"e:\\\\Projetos\\\\thiagoVDev\" -Directory)"
     ]
   }
 }

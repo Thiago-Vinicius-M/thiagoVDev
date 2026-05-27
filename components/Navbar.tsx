@@ -59,7 +59,7 @@ export function Navbar() {
               <a
                 key={href}
                 href={href}
-                className={`text-xs md:text-sm font-medium tracking-wide transition-colors duration-200 ${
+                className={`text-xs md:text-sm font-medium tracking-wide transition-colors duration-200 py-3 ${
                   isActive
                     ? "text-[var(--green)]"
                     : "text-[var(--text-muted)] hover:text-white"
