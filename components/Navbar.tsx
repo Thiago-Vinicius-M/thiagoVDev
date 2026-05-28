@@ -10,6 +10,23 @@ const NAV_LINKS = [
 ];
 
 const SECTION_IDS = ["hero", "sobre", "projetos", "contato"];
+const NAVBAR_H = 56; // h-14
+
+function scrollToSection(href: string) {
+  const id = href.replace("#", "");
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const usable = window.innerHeight - NAVBAR_H;
+  const elTop = el.getBoundingClientRect().top + window.scrollY;
+  const elH = el.offsetHeight;
+
+  // Se a seção cabe no viewport disponível, centraliza; senão alinha ao topo
+  const gap = usable - elH;
+  const topPad = gap > 0 ? Math.floor(gap / 2) : 0;
+
+  window.scrollTo({ top: Math.max(0, elTop - NAVBAR_H - topPad), behavior: "smooth" });
+}
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -59,6 +76,7 @@ export function Navbar() {
               <a
                 key={href}
                 href={href}
+                onClick={(e) => { e.preventDefault(); scrollToSection(href); }}
                 className={`text-xs md:text-sm font-medium tracking-wide transition-colors duration-200 py-3 ${
                   isActive
                     ? "text-[var(--green)]"
