@@ -27,7 +27,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
   return (
     <button
       onClick={onClick}
-      className="w-full text-left cursor-pointer rounded-xl bg-[var(--card)] border border-[var(--border)] overflow-hidden hover:border-white/10 transition-colors duration-300 group focus-visible:outline-none focus-visible:ring-inset focus-visible:ring-1 focus-visible:ring-white/20"
+      className="w-full text-left cursor-pointer rounded-xl bg-[var(--card)] border border-[var(--border)] overflow-hidden hover:border-white/10 transition-colors duration-300 group focus-visible:outline-none focus-visible:ring-inset focus-visible:ring-1 focus-visible:ring-white/20 h-[420px]"
     >
       {/* Thumbnail */}
       <div className="relative aspect-[16/10] border-b border-[var(--border)]">

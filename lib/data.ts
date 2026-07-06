@@ -94,6 +94,85 @@ export const PROJECTS: Project[] = [
     createdAt: "2025-01-01",
     updatedAt: "2025-01-01",
   },
+  {
+    id: "quebra-codigo",
+    slug: "quebra-codigo",
+    name: "QuebraCódigo — Plataforma de Ensino de Lógica de Programação",
+    description:
+      "Plataforma web educacional que une trilhas de programação e seis minijogos de lógica a um sistema próprio de conta, pontuação e ranking, desenvolvida em equipe como Trabalho de Conclusão de Curso.",
+    fullDescription:
+      "Plataforma web educacional que une trilhas de programação e seis minijogos de lógica a um sistema próprio de conta, pontuação e ranking, desenvolvida em equipe como Trabalho de Conclusão de Curso.",
+    problemSolved:
+      "O fluxo do sistema une conteúdo teórico — cursos organizados em Curso → Lição → Exercício — à prática imediata, por meio de seis jogos de lógica implementados como verticais independentes (Sudoku, Campo Minado, Jogo da Memória, Connect 4, 2048 e Flow Free).\n\nEsse elo é reforçado por um sistema de pontos, moedas e ranking entre usuários, além de relacionamentos opcionais entre lições/exercícios e jogos específicos — permitindo que um conceito ensinado seja imediatamente exercitado em um jogo correspondente.",
+    mainFeatures: [
+      "Cadastro, login e edição de perfil via sessão HTTP",
+      "Seis jogos de lógica jogáveis com API REST própria e estado mantido no servidor (Sudoku, Campo Minado, Jogo da Memória, Connect 4, 2048 e Flow Free)",
+      "Catálogo de cursos, lições e exercícios com API CRUD completa",
+      "Acompanhamento de progresso por usuário e por lição",
+      "Gamificação com pontos, moedas e ranking dos melhores usuários",
+      "Chat com IA integrado via Google Gemini",
+    ],
+    technicalDifferentials: [
+      "Design servidor-autoritativo nos seis jogos: o cliente envia apenas a intenção da jogada e o servidor calcula e devolve o novo estado, identificado por um gameId mantido em memória",
+      "Ocultação de dados sensíveis de jogo (minas, soluções) do JSON retornado ao cliente, via campos transient e wrappers privados",
+      "Schema PostgreSQL dedicado para contornar a revogação de CREATE no schema public a partir do PostgreSQL 15",
+      "Suíte de testes E2E com Playwright cobrindo autenticação, navegação e os seis jogos",
+    ],
+    team: [
+      { name: "Thiago Vinícius", role: "Idealização do projeto, divisão de responsabilidades entre a equipe e acompanhamento de todo o processo de desenvolvimento" },
+      { name: "Thomaz Arthur", role: "Back-end e implementação dos jogos" },
+      { name: "Raphael Martins", role: "Interfaces mobile e desktop" },
+      { name: "Victor Hugo", role: "Integração entre front-end e back-end" },
+      { name: "Bryan Loyola", role: "Testes" },
+    ],
+    architectureStack: [
+      { category: "Backend", value: "Java 21 + Spring Boot 3.3" },
+      { category: "Persistência", value: "PostgreSQL + Flyway + Spring Data JPA" },
+      { category: "Frontend", value: "HTML5, CSS3 e JavaScript (ES modules)" },
+      { category: "Testes", value: "Playwright (E2E)" },
+      { category: "IA", value: "Google Gemini (google-genai SDK)" },
+    ],
+    systemStructure: [
+      { folder: "api/", description: "Controllers REST — autenticação, cursos, lições, exercícios, progresso e gamificação" },
+      { folder: "game/", description: "Seis verticais independentes de jogo (Controller + Service + State) — Sudoku, Campo Minado, Memória, Connect 4, 2048 e Flow Free" },
+      { folder: "model/", description: "Entidades JPA (Usuario, Curso, Licao, Exercicio, Jogo, Progresso, Assinatura, Conquista) com auditoria automática via BaseEntity" },
+      { folder: "repo/", description: "Repositórios Spring Data JPA, um por entidade" },
+      { folder: "security/", description: "Filtros de servlet próprios para autenticação e controle de cache (UsernameFilter, NoCacherFilter)" },
+    ],
+    architectureNotes: [
+      "Autenticação via sessão HTTP com filtro de servlet próprio (UsernameFilter), sem uso do Spring Security",
+      "Cada jogo é uma fatia vertical independente, sem classe-base compartilhada — favorece isolamento entre jogos",
+      "CORS restrito explicitamente aos prefixos /auth/** e /api/games/**",
+      "Schema PostgreSQL dedicado (app) com script de setup próprio para PostgreSQL 15+",
+    ],
+    architectureSecurity:
+      "A autenticação é feita via sessão HTTP verificada por um filtro de servlet próprio (UsernameFilter), que bloqueia com 401 requisições de API sem sessão válida e redireciona páginas protegidas para o login. As senhas são armazenadas com hash BCrypt.",
+    testsCoverage:
+      "A cobertura automatizada está concentrada em uma suíte E2E com Playwright, cobrindo autenticação, navegação entre páginas protegidas e o comportamento funcional dos seis jogos via chamadas diretas à API REST e verificação visual na interface.",
+    testsScenarios: [
+      "Cadastro, login e logout",
+      "Proteção de rotas e redirecionamento sem sessão",
+      "Sudoku — validação de jogadas e resolução",
+      "Campo Minado — revelação de células e vitória/derrota",
+      "Jogo da Memória — pareamento de cartas",
+      "Connect 4 — jogadas e condição de vitória",
+      "2048 — movimentação, merge e desfazer",
+      "Navegação entre páginas públicas e protegidas",
+    ],
+    testsStrategy:
+      "A suíte utiliza o padrão Page Object Model (um objeto de página por tela) e uma fixture de autenticação reutilizável, que registra um usuário único a cada execução e faz login pela interface antes de cada teste.\n\nOs testes rodam em dois perfis — Desktop Chrome e Pixel 5 (mobile) — de forma serial, para evitar efeitos colaterais concorrentes no banco de dados.",
+    testsTools: ["Playwright", "Page Object Model", "Node.js"],
+    technologies: ["Java", "Spring Boot", "PostgreSQL", "JavaScript"],
+    type: "Projeto Acadêmico",
+    coverImage: "/images/capaQuebraCodigoPort.png",
+    desktopMockup: "/images/thumbQuebraCodigo.png",
+    githubUrl: "https://github.com/Thiago-Vinicius-M/QuebraCodigo",
+    flowcharts: ["/docs/quebra-codigo/flowchart.svg"],
+    entityRelationshipDiagrams: ["/docs/quebra-codigo/er-diagram.svg"],
+    featured: false,
+    createdAt: "2024-08-01",
+    updatedAt: "2026-12-01",
+  },
 ];
 
 export const FOOTER_LINKS = {

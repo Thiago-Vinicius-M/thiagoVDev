@@ -24,6 +24,11 @@ export interface SystemFolder {
   description: string;
 }
 
+export interface TeamMember {
+  name: string;
+  role: string;
+}
+
 export interface Project {
   id: string;
   slug: string;
@@ -33,6 +38,7 @@ export interface Project {
   problemSolved?: string;
   mainFeatures?: string[];
   technicalDifferentials?: string[];
+  team?: TeamMember[];
   status?: ProjectStatus;
   technologies: string[];
   architectureStack?: ArchitectureStackItem[];

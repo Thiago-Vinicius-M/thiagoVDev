@@ -54,7 +54,7 @@ export function ProjectsCarousel({ projects, onProjectClick }: ProjectsCarouselP
   return (
     <div>
       <div className="overflow-x-clip cursor-grab active:cursor-grabbing" ref={emblaRef}>
-        <div className="flex gap-3">
+        <div className="flex gap-3 pl-4 md:pl-6 pr-4 md:pr-6 justify-[safe_center]">
           {projects.map((project) => (
             <div
               key={project.id}
@@ -67,7 +67,7 @@ export function ProjectsCarousel({ projects, onProjectClick }: ProjectsCarouselP
       </div>
 
       {projects.length > 1 && (
-        <div className="flex justify-end gap-2 mt-4">
+        <div className="flex justify-end gap-2 mt-4 px-4 md:px-6">
           <button
             onClick={scrollPrev}
             disabled={!canScrollPrev}

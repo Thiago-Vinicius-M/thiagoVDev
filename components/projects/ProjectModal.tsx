@@ -63,7 +63,8 @@ function OverviewTab({ project }: { project: Project }) {
     description ||
     project.problemSolved ||
     project.mainFeatures?.length ||
-    project.technicalDifferentials?.length;
+    project.technicalDifferentials?.length ||
+    project.team?.length;
 
   if (!hasContent) return <EmptyTabState />;
 
@@ -95,6 +96,19 @@ function OverviewTab({ project }: { project: Project }) {
         <div>
           <SectionLabel>Diferenciais técnicos</SectionLabel>
           <BulletList items={project.technicalDifferentials} />
+        </div>
+      )}
+      {project.team && project.team.length > 0 && (
+        <div>
+          <SectionLabel>Equipe</SectionLabel>
+          <div className="space-y-2">
+            {project.team.map((member, i) => (
+              <div key={i} className="flex items-start gap-3 text-xs">
+                <span className="text-white/80 shrink-0 w-32">{member.name}</span>
+                <span className="text-white/60 leading-relaxed">{member.role}</span>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>

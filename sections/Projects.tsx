@@ -27,19 +27,18 @@ export function Projects({ projects }: ProjectsProps) {
 
   return (
     <>
-      <section
-        id="projetos"
-        className="max-w-4xl mx-auto px-4 md:px-6 py-16 md:py-24"
-      >
-        <div className="mb-3.5">
-          <SectionHeading title="Projetos" className="mb-3" />
-        </div>
+      <section id="projetos" className="py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-4 md:px-6">
+          <div className="mb-3.5">
+            <SectionHeading title="Projetos" className="mb-3" />
+          </div>
 
-        <div className="mb-3.5">
-          <ProjectsFilters
-            activeType={activeType}
-            onTypeChange={setActiveType}
-          />
+          <div className="mb-3.5">
+            <ProjectsFilters
+              activeType={activeType}
+              onTypeChange={setActiveType}
+            />
+          </div>
         </div>
 
         <ProjectsCarousel projects={filtered} onProjectClick={setSelectedProject} />
