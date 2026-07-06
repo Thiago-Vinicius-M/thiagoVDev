@@ -119,7 +119,7 @@ export const PROJECTS: Project[] = [
       "Suíte de testes E2E com Playwright cobrindo autenticação, navegação e os seis jogos",
     ],
     team: [
-      { name: "Thiago Vinícius", role: "Idealização do projeto, divisão de responsabilidades entre a equipe e acompanhamento de todo o processo de desenvolvimento" },
+      { name: "Thiago Vinícius", role: "Idealização do projeto, divisão de responsabilidades entre a equipe" },
       { name: "Thomaz Arthur", role: "Back-end e implementação dos jogos" },
       { name: "Raphael Martins", role: "Interfaces mobile e desktop" },
       { name: "Victor Hugo", role: "Integração entre front-end e back-end" },
